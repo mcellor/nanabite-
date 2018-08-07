@@ -1,0 +1,19 @@
+{
+  "pages": [
+    
+    "pages/auth/auth",
+    "pages/join/join",
+    "pages/publication/publication",
+    "pages/pageopen/pageopen",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "隔壁有坑",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": false
+}
