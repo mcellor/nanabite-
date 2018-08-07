@@ -1,0 +1,235 @@
+page{
+    background: #ebebeb;
+}
+
+.center{
+    text-align: center;
+    background: white;
+}
+
+.view_description{
+    padding:3px 10px;
+    background: white;
+}
+
+.right{
+    text-align: right
+}
+
+.title{
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.description{
+    color: #454545;
+}
+
+.avatar{
+    vertical-align: middle;
+    width: 2.5em;
+    height: 2.5em;
+    border: 1px solid #ebebeb;
+    border-radius: 5%;
+}
+
+.view_publisher{
+    padding: 3px 10px;
+    text-align: center;
+    line-height: 1em;
+    background: white;
+    padding-top: 1em;
+}
+
+.gourmet_info{
+    background: white;
+    padding: 5px 10px;
+}
+
+.support_info{
+    float: right;
+    display: inline-block;
+}
+.support_info_support{
+    display: inline-block;
+}
+.support_info_unsupport{
+    display: inline-block;
+}
+.support_info image{
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 10px;
+}
+.support_info text{
+    font-size: 0.8em;
+    color: gray;
+    padding-left: 3px;
+}
+
+
+#publisher_avatar{
+    vertical-align: middle;
+    width: 1.8em;
+    height: 1.8em;
+    border: 1px solid #ebebeb;
+    border-radius: 50%;
+}
+
+#publisher{
+    font-size: 0.8em;
+    color: gray;
+    vertical-align: middle;
+}
+
+#create_time_tag{
+    font-size: 0.8em;
+    color: gray;
+    vertical-align: middle;
+}
+
+.layout_left{
+    display: inline;
+}
+.layout_right{
+    display: inline;
+    margin-left: 10px;
+}
+
+.comment{
+    padding-top: 10px;
+    min-height: 15em;
+    margin-top: 1.8em;
+    background: white;
+}
+
+.comment_layout{
+    padding-top: 15px;
+}
+
+.comment_text_nickname{
+    font-size: 0.8em;
+    color: #5e5757;
+    display: block;
+}
+.comment_text_content{
+    font-size: 1em;
+    color: black;
+    display: block;
+}
+.comment_text_time{
+    font-size: 0.7em;
+    color: gray;
+    display: block;
+}
+
+.view_operate{
+    padding: 0px 10px;
+    display: flex;
+}
+
+.btn_operate{
+    width: 30%;
+    color: gray;
+    font-size: 1em;
+    text-align: center;
+    padding: 5px 10px;
+    line-height: 1.5em;
+}
+.btn_operate:active{
+    background: #ebebeb;
+}
+.ic_operate{
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.view_comment{
+  position: fixed;
+  display: flex;
+  top: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 6, 0.5);
+}
+.comment_layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 3em;
+}
+.view_comment form{
+    width: 100%;
+    padding: 0px 10px;
+    background: white;
+    position: absolute;
+    line-height: 3em;
+    bottom: 0px;
+}
+.view_comment input{
+    border: 1px solid #ebebeb;
+    width: 70%;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn_send_comment{
+    width: 4em;
+    vertical-align: middle;
+    display: inline-block;
+    color: gray;
+    font-size: 1em;
+    text-align: center;
+    padding: 5px 10px;
+    line-height: 1.5em;
+}
+.btn_send_comment:active{
+    background: #ebebeb;
+}
+
+#img_openlocation{
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+}
+
+#openLocation{
+    width: 100%;
+    height: 2.5em;
+    /*margin-top: 0.8em;*/
+    line-height: 2.5em;
+    color: black;
+    text-align: center;
+    background-color: whitesmoke;
+    box-shadow: 0 0 3px lightgray;
+    /*border-radius: 5px;*/
+}
+
+#openLocation:active{
+    background-color: lightgray;
+}
+
+.swiper-image{
+    width: 100%;
+}
+
+.line{
+    height: 1px;
+    background: #ebebeb;
+    margin-top: 5px;
+}
+
+.blank:active{
+    background: gainsboro;
+}
+
+#sofa{
+    width: 120px;
+    height: 120px;
+}

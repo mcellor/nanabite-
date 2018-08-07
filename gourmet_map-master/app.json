@@ -1,0 +1,18 @@
+{
+  "pages":[
+
+    "pages/index/index"
+    ,"pages/map/map"
+    ,"pages/detail/detail"
+    ,"pages/add_gourmet/add_gourmet"
+    
+  ]
+  ,"window":{
+    "backgroundTextStyle":"normal"
+    ,"navigationBarBackgroundColor": "#fff"
+    ,"navigationBarTitleText": "Nanabite 美食地图"
+    ,"navigationBarTextStyle":"black"
+    ,"enablePullDownRefresh": false
+  }
+  ,"debug": true
+}

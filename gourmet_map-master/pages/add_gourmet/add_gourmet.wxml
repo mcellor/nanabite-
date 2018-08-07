@@ -1,0 +1,54 @@
+
+
+<view class="main">
+
+  <view class="layout_horizontal" style="margin-top:20px;" >
+    <image class="ic_operate" src="/imgs/loc.svg"></image>
+    <input bindinput="inputAddress" placeholder="商家地址" value="{{address}}" maxlength="140" style="height:1.5em" style='text-align: center;'  class="input" />
+    
+  </view>
+  <view class="layout_horizontal" >
+    <image class="ic_operate" src="/imgs/sho.svg"  ></image>
+    <input bindinput="inputTitle" placeholder="商家名称" value="{{title}}" maxlength="140" style="height:1.5em" style='text-align: center;' class="input" />
+    
+  </view>
+
+
+
+  <view class="center">
+
+    <swiper  style="30px" indicator-dots="ture" bindtap="preview" autoplay="true" >
+      <block wx:for="{{urls}}" wx:key="*this">
+        <swiper-item>
+          <image bindtap='add_pics' mode="withFill" style="width:93%;" src="{{item}}  "></image>
+        </swiper-item>
+      </block>
+     </swiper>
+    <text class='title2'>已添加{{urls.length}}/{{total_pics_number}}张图片</text>
+  </view>
+
+    
+    <textarea placeholder="美食名称：小仙女肉～" style="height:2.5em" bindinput="inputDish" maxlength="500" class="inputext"/>
+
+<view class='basic'>
+<view class='namebox'>
+    <text class='name'>什么菜系来着？</text>
+    <image class='nameicon' src='/imgs/righticon.png'></image>
+    <picker bindchange="pickerFiled" value="{{fileds[fIndex]}}" range="{{fileds}}">
+      <view class="field">{{fileds[fIndex]}}</view>
+    </picker>
+  </view>
+<view class='namebox'>
+    <text class='name'>多少钱来着？</text>
+    <image class='nameicon' src='/imgs/righticon.png'></image>
+    <picker bindchange="pickerMoney" value="{{moneys[mIndex]}}" range="{{moneys}}">
+      <view class="field">{{moneys[mIndex]}}</view>
+    </picker>
+  </view>
+    </view>
+
+    <textarea placeholder="简单描述一下呗：～" bindinput="inputDesc" maxlength="500" class="inputext" />
+
+</view>
+
+  <button bindtap="add_gourmet" class='back' open-type="navigateBack">发送</button>

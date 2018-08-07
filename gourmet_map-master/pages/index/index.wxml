@@ -1,0 +1,75 @@
+<import src="../template/indexPopup.wxml" />
+<template is="userPannel" data="{{isShowUserPannel}}" />
+<view class='add_symbol' bindtap='showUserPannel'></view>
+
+<view class='headers'>
+  <text class='title'>Nanabite</text>
+  <image src="{{avatarUrl}}"></image>
+</view>
+<!--特别推荐轮播图  -->
+<view class='body'>
+  <text class='title0'>今个吃啥</text>
+  <text class='title2'>罗切斯特，雪花儿那个飘的罗切斯特</text>
+  <swiper class='imgsilder' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-active-color="#FFD92E" indicator-color="#E8F0F1" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image mode='aspectFill' src="{{item}}" class="slide-image" width="355" height="200" bindtap='gotoDetail' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="main">
+
+
+
+<view class='projectbox'>
+  <text class='headingtext'>Today</text>
+<view id="gourmet_list">
+  
+  <view wx:for="{{gourmets}}" wx:key="objectId">
+  
+    <view class="list_item" bindtap="gotoDetail" data-item="{{item}}">
+      <text class="itemtext_title" 
+            data-item="{{item}}">{{item.title}}</text>
+      <text class="sub_title" 
+            data-item="{{item}}">{{item.distance}}km</text>
+      <view>
+        <image class="img" mode="aspectFill" src="{{item.head_url}}"
+               data-item="{{item}}"></image>
+      </view>
+      
+    <view class = "user_info">
+    <image id="publisher_avatar" data-item="{{item}}" src="{{item.user_avatar}}">
+    </image>
+    <text id="publisher" data-item="{{item}}">  {{item.user_nickname}}       </text>
+     </view>
+      
+      <text class="address" 
+            data-item="{{item}}">地址：{{item.address}}
+      </text>
+
+      <view class="support_info"
+        data-item="{{item}}">
+        <image data-item="{{item}}" src="/imgs/ic_like.png"></image>
+        <text data-item="{{item}}">{{item.support ? item.support : 0}}</text>
+        <image data-item="{{item}}" src="/imgs/ic_unlike.png"></image>
+        <text data-item="{{item}}">{{item.objection ? item.objection : 0}}           </text>
+      </view>
+    </view>
+
+  </view>
+
+  <view hidden="{{!ismore}}" id="view_more">
+      <image id="img_more" src="../../imgs/loading.gif"></image>
+  </view>
+  </view>
+
+<!--gourmet_list-->
+</view>
+
+<include src="../common/loading.wxml"/>
+
+<view style="height:2.8em;"/>
+
+</view>

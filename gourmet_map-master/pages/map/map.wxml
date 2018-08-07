@@ -1,0 +1,47 @@
+<view class="main">
+
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}"
+ markers="{{markers}}"
+ style="width:{{map_width}}px;height:{{map_height}}px"
+ bindmarkertap="markertap"
+ show-location scale="12" controls="{{controls}}">
+</map>
+
+
+
+
+<view class="tips">请左右滑动下面切换美食点↓↓↓</view>
+
+<view id="swiper_area">
+<swiper current="{{current}}" style="height:{{map_width}}px"
+ bindchange="currentChange">
+  <block wx:for="{{markers}}">
+    <swiper-item bindtap="gotoDetail" data-item="{{item.data}}">
+    <view style="padding: 0px 10px;"
+          data-item="{{item.data}}">
+       <text data-item="{{item.data}}"
+        class="itemtext_title">{{item.data.title}}</text>
+       <text data-item="{{item.data}}"
+        class="sub_title">离我{{item.data.distance}}km</text>
+      <view style="text-align:right">
+      <image data-item="{{item.data}}" class="img" mode="aspectFill" src="{{item.data.head_url}}"></image>
+      </view>
+      <text data-item="{{item.data}}"
+       class="address">{{item.data.address}}</text>
+      <view data-item="{{item.data}}"
+            class="support_info">
+        <image data-item="{{item.data}}"
+         src="/imgs/ic_like.png"></image>
+        <text data-item="{{item.data}}">{{item.data.support ? item.data.support : 0}}</text>
+        <image data-item="{{item.data}}" src="/imgs/ic_unlike.png"></image>
+        <text data-item="{{item.data}}">{{item.data.objection ? item.data.objection : 0}}</text>
+      </view>
+    </view>
+
+    </swiper-item>
+  </block>
+</swiper>
+
+</view>
+
+</view>

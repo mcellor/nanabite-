@@ -1,0 +1,111 @@
+<view class="main">
+
+<view class="center">
+
+<swiper style="height:{{img_height}}px" indicator-dots="{{indicatorDots}}"
+  bindtap="preview"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{gourmet.urls}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" mode="aspectFill" class="swiper-image" width="{{img_width}}" height="{{img_height}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+</view>
+
+<view class="view_description">
+    <view class="title">{{gourmet.title}}</view>
+    <text class="description">{{gourmet.description}}</text>
+</view>
+
+<view class="view_publisher">
+    <image id="publisher_avatar" src="{{gourmet.user_avatar}}"></image>
+    <view id="publisher">{{gourmet.user_nickname}}</view>
+</view>
+
+<view class="gourmet_info">
+  <text id="create_time_tag">发布于{{gourmet.create_time_tag}}</text>
+  <view class="support_info">
+    <view class="support_info_support">
+      <image src="/imgs/ic_like.png"></image>
+      <text>{{gourmet.support ? gourmet.support : 0}}</text>
+    </view>
+    <view class="support_info_unsupport">
+      <image src="/imgs/ic_unlike.png"></image>
+      <text>{{gourmet.objection ? gourmet.objection : 0}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="center">
+      <view bindtap="openLocation" id="openLocation">
+        <image id="img_openlocation" src="../../imgs/ic_map.png"></image>
+        <text style="vertical-align: middle">查看位置</text>
+      </view>
+</view>
+
+<!--comments-->
+<view class="comment">
+    
+    <view class="view_operate">
+      <view bindtap="openComment" class="btn_operate">
+      <image class="ic_operate" src="/imgs/ic_write_comment.png"></image>
+      写评论</view>
+
+      <view bindtap="addSupport" class="btn_operate">
+      <image class="ic_operate" src="{{ic_support}}"></image>
+      顶</view>
+
+      <view bindtap="addUnsupport" class="btn_operate">
+      <image class="ic_operate" src="{{ic_unsupport}}"></image>
+      踩</view>
+    </view>
+
+    <block wx:if="{{!comments}}">
+      <view class="center blank" bindtap="openComment">
+        <image id="sofa" src="/imgs/ic_sofa.png"></image>
+        <view style="color: #bfbfbf;">快抢沙发</view>
+      </view>
+    </block>
+
+    <view class="comment_layout" wx:for="{{comments}}" wx:key="objectId">
+      
+      <view style="display:flex;padding: 0px 10px;">
+        <view class="layout_left">
+          <image class="avatar" src="{{item.avatar}}"></image>
+        </view>
+
+        <view class="layout_right">
+          <text class="comment_text_nickname">{{item.nickname}}</text>
+          <text class="comment_text_content">{{item.content}}</text>
+          <text class="comment_text_time">{{item.create_time_tag}}</text>
+        </view>
+      </view>
+      <view class="line" />
+      
+    </view>
+
+    <view hidden="{{!show_loading}}" id="view_more">
+      <image id="img_more" src="../../imgs/loading.gif"></image>
+    </view>
+    
+</view>
+
+<!--<include src="../common/loading.wxml"/>-->
+
+<view hidden="{{!show_comment}}"
+      class="view_comment">
+  <view class="comment_layer" catchtouchstart="closeComment"></view>
+  <form>
+     <input placeholder="请输入评论..." 
+     bindinput="inputComment"
+     name="commContent" value="{{commContent}}"
+     focus="{{focus}}" />
+     <view class="btn_send_comment"
+     bindtap="addComment"
+     formType="submit">提交</view>
+  </form>
+</view>
+
+</view>
