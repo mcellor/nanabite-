@@ -33,10 +33,10 @@ page{
   transform: rotate(90deg)
 }
 .list_item:active{
-    background: #ebebeb;
+    background: #fff;
 }
 .list_item{
-    background: white;
+    background: #fff;
     margin-bottom: 1em;
     padding: 1em 0em 0.5em 0em;
 }
@@ -83,11 +83,28 @@ page{
     font-weight: 700;
     padding-left: 10px;
 }
-
+.addre{
+  color: #d4d2d4;
+  text-align: right;
+  font-size: 30rpx;
+  display: block;
+  margin-right:15rpx;
+}
 .address{
-    display: block;
-    color: gray;
-    padding-left: 10px;
+  color: #d4d2d4;
+  text-align: right;
+  font-size: 30rpx;
+  display: block;
+  padding-top: 10rpx;
+  margin-right:15rpx;
+}
+.description{
+  color: #d4d2d4;
+  text-align: left;
+  font-size: 30rpx;
+  display: block;
+  padding-top: 10rpx;
+  margin-left:30rpx;
 }
 .sub_title{
     display: block;
@@ -259,3 +276,8 @@ page{
   letter-spacing: 2rpx;
   font-weight: 900;
 }
+.layout_horizontal{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+ }

@@ -25,29 +25,40 @@
 
 <view class='projectbox'>
   <text class='headingtext'>Today</text>
+
 <view id="gourmet_list">
   
   <view wx:for="{{gourmets}}" wx:key="objectId">
   
     <view class="list_item" bindtap="gotoDetail" data-item="{{item}}">
       <text class="itemtext_title" 
-            data-item="{{item}}">{{item.title}}</text>
+            data-item="{{item}}">{{item.dish_name}}</text>
       <text class="sub_title" 
             data-item="{{item}}">{{item.distance}}km</text>
       <view>
         <image class="img" mode="aspectFill" src="{{item.head_url}}"
                data-item="{{item}}"></image>
       </view>
-      
+    <view class = 'layout_horizontal'>
     <view class = "user_info">
     <image id="publisher_avatar" data-item="{{item}}" src="{{item.user_avatar}}">
     </image>
-    <text id="publisher" data-item="{{item}}">  {{item.user_nickname}}       </text>
+    <text id="publisher" data-item="{{item}}">  {{item.user_nickname}}
+    </text>
      </view>
-      
-      <text class="address" 
-            data-item="{{item}}">地址：{{item.address}}
+
+    <!-- <text class="address" 
+            data-item="{{item}}">{{item.description}}
+    </text> -->
+    </view>
+
+     <text class="description" 
+            data-item="{{item}}">{{item.description}}
       </text>
+      <text class="address" 
+            data-item="{{item}}">{{item.title}}
+      </text>
+      
 
       <view class="support_info"
         data-item="{{item}}">

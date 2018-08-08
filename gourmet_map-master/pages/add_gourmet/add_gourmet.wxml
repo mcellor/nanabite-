@@ -1,11 +1,10 @@
-
-
-<view class="main">
   <image class='bg' src='/imgs/bg.png'></image>
+<view class="main">
   <view class = "body">
   <text class='title0'>Nanapost 标记地图</text>
   <text class='basictext'>添加照片</text>
   </view>
+
 
 
   <!-- <view class="layout_horizontal" style="margin-top:20px;" >
@@ -41,10 +40,11 @@
   <!--名字部分  -->
   <view  class='namebox'>
     <text  class='name'>地址</text>
-    <image  class='nameicon' src='/imgs/righticon.png'></image>
-    <view bindtap="chooseLocation">
-    <text  class='nametext'>{{address}}</text>
+    <image class='nameicon' src='/imgs/righticon.png'></image>
+    <view bindchange="chooseLocation">
+          <view  class='field'>{{address}}</view> 
     </view>
+
   </view>
 
   <!--手机号部分  -->
@@ -67,6 +67,8 @@
       <view class="field">{{fileds[fIndex]}}</view>
     </picker>
   </view>
+
+
 <view class='namebox'>
     <text class='name'>多少钱来着？</text>
     <image class='nameicon' src='/imgs/righticon.png'></image>
