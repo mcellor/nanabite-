@@ -15,8 +15,7 @@
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: row;
-  margin-left:10px;
-  margin-top: 10px;
+ 
   margin-bottom: 10px;
 }
 
@@ -95,7 +94,7 @@
 /*自媒体联动小程序属性  */
 
 .title2 {
-  color: #d4d2d4;
+  color: #828282;
   font-size: 30rpx;
   display: block;
   padding-top: 10rpx;
@@ -104,6 +103,24 @@
   width: 750rpx;
   height: 100%;
   position: absolute;
+}
+.body {
+  padding: 0px 50rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 25rpx;
+}
+.imgsilder {
+  border-radius: 25rpx;
+  width: 100%;
+  height: 328rpx;
+  margin: 0rpx auto;
+  display: block;
+  /* margin-top: 15rpx; *//* border-radius: 25rpx;  */
+  overflow: hidden;
+  margin-top: 25rpx;
 }
 
 .namebox {
@@ -156,4 +173,17 @@
   border-radius: 25rpx;
   left: 50%;
   margin-left: -65rpx;
+}
+
+.nametext {
+  font-size: 33rpx;
+  color: #828282;
+  float: right;
+  padding-right: 25rpx;
+  text-align: right;
+}
+.basictext {
+  font-size: 30rpx;
+  color: #828282;
+  display: block;
 }

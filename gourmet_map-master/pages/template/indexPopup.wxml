@@ -14,8 +14,8 @@
 
     <!--功能盒模型  -->
     <view class='function'>
-      <navigator url="/pages/user/user"  class='usercenter'>个人中心</navigator>
-      <navigator url="/pages/publication/publication" class='newscenter'>发布消息</navigator>
+      <navigator   bindtap="showMap" class="usercenter">打开地图</navigator>
+      <navigator   bindtap="addPoint" class="newscenter">发布消息</navigator>
     </view>
 
   </view>

@@ -150,6 +150,7 @@ Page({
     })
   }
   ,chooseLocation: function(){
+    console.log("raise")
     var that = this;
     wx.chooseLocation({
       success: function(ret){

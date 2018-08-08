@@ -1,5 +1,7 @@
 /* pages/user/user.wxss */
-
+#open_map{
+    float: left;
+}
 /*背景盒模型  */
 
 .user {

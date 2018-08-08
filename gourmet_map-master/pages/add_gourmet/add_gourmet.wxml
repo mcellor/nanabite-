@@ -1,8 +1,14 @@
 
 
 <view class="main">
+  <image class='bg' src='/imgs/bg.png'></image>
+  <view class = "body">
+  <text class='title0'>Nanapost 标记地图</text>
+  <text class='basictext'>添加照片</text>
+  </view>
 
-  <view class="layout_horizontal" style="margin-top:20px;" >
+
+  <!-- <view class="layout_horizontal" style="margin-top:20px;" >
     <image class="ic_operate" src="/imgs/loc.svg"></image>
     <input bindinput="inputAddress" placeholder="商家地址" value="{{address}}" maxlength="140" style="height:1.5em" style='text-align: center;'  class="input" />
     
@@ -11,26 +17,49 @@
     <image class="ic_operate" src="/imgs/sho.svg"  ></image>
     <input bindinput="inputTitle" placeholder="商家名称" value="{{title}}" maxlength="140" style="height:1.5em" style='text-align: center;' class="input" />
     
-  </view>
-
-
+</view> -->
 
   <view class="center">
 
-    <swiper  style="30px" indicator-dots="ture" bindtap="preview" autoplay="true" >
+<view class = "body">
+    <swiper class='imgsilder' style="30px" indicator-dots="ture" bindtap="preview" autoplay="true" >
       <block wx:for="{{urls}}" wx:key="*this">
         <swiper-item>
-          <image bindtap='add_pics' mode="withFill" style="width:93%;" src="{{item}}  "></image>
+          <image bindtap='add_pics' mode="aspectFill" class="slide-image" width="355" height="200" src="{{item}}  "></image>
         </swiper-item>
       </block>
      </swiper>
+     </view>
     <text class='title2'>已添加{{urls.length}}/{{total_pics_number}}张图片</text>
   </view>
 
     
-    <textarea placeholder="美食名称：小仙女肉～" style="height:2.5em" bindinput="inputDish" maxlength="500" class="inputext"/>
+    <!-- <textarea placeholder="美食名称：小仙女肉～" style="height:2.5em" bindinput="inputDish" maxlength="500" class="inputext"/> -->
 
 <view class='basic'>
+  <text class='basictext'>基本信息</text>
+  <!--名字部分  -->
+  <view  class='namebox'>
+    <text  class='name'>地址</text>
+    <image  class='nameicon' src='/imgs/righticon.png'></image>
+    <view bindtap="chooseLocation">
+    <text  class='nametext'>{{address}}</text>
+    </view>
+  </view>
+
+  <!--手机号部分  -->
+  <view class='namebox'>
+    <text class='name'>商家名称</text>
+    <image class='nameicon' src='/imgs/righticon.png'></image>
+    <input bindinput="inputTitle" placeholder-class='textcolor' class='nametext' value="{{title}}"></input>
+  </view>
+
+<view class='namebox'>
+    <text class='name'>美食名称</text>
+    <image class='nameicon' src='/imgs/righticon.png'></image>
+    <input bindinput="inputDish" placeholder-class='textcolor' class='nametext'></input>
+  </view>
+
 <view class='namebox'>
     <text class='name'>什么菜系来着？</text>
     <image class='nameicon' src='/imgs/righticon.png'></image>
