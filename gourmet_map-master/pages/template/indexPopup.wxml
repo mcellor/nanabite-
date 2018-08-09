@@ -3,7 +3,7 @@
   <!--用户盒模型  -->
   <view wx:if="{{isShowUserPannel}}" class='user'>
     <!--背景  -->
-    <image class='bg' src="/imgs/bg.png"></image>
+    <image bindtap = 'showUserPannel' class='bg' src="/imgs/bg.png"></image>
     <!--搜索盒模型  -->
     <view class='seach'>
       <!-- 搜索icon -->

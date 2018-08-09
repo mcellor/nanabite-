@@ -29,7 +29,7 @@
       </block>
      </swiper>
      </view>
-    <text class='title2'>已添加{{urls.length}}/{{total_pics_number}}张图片</text>
+    <text class='title2'>已添加{{lenurls}}/{{total_pics_number}}张图片</text>
   </view>
 
     

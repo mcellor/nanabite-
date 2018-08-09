@@ -43,7 +43,8 @@ Page({
       , fileds: ['美式 🍔', '面条 🍜', '沙拉 🥗','牛排 🍖']
       , fIndex: 2
       , moneys: ['<$10 💵', '$10-$15 💵💵', '$15-$25 💰', '$25-$40 💰💰','>$40 💰💰💰']
-      , mIndex: 1
+      , mIndex: 1,
+      lenurls: 0
     },
 
     pickerFiled: function (e) {
@@ -116,7 +117,8 @@ Page({
                   //
                   headurl = urls.length > 0 ? urls[0] : "";
                   that.setData({
-                    urls: urls
+                    urls: urls,
+                    lenurls: urls.length
                     ,headurl: headurl
                     ,show_headurl: headurl == "" ? false : true
                   })
