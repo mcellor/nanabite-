@@ -14,10 +14,54 @@
 
 </view>
 
-<view class="view_description">
-    <view class="title">{{gourmet.title}}</view>
-    <text class="description">{{gourmet.description}}</text>
+<view class="content-topics" style="padding-left: 40px">
+    <view class="topics-title">{{gourmet.dish_name}}</view>
+    <view class = 'topice-user' id="publisher">{{gourmet.title}}</view>
 </view>
+
+<view class="ui-row" style="margin-bottom: 50px;margin-top: 10px;height:400px;">
+        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 40px;padding-right: 40px;">
+          <view class="ui-col-content align-left valign-middle">
+          
+          <view class="sentence-info">
+                <text>"{{gourmet.description}}"</text>
+              </view>
+           <view class="sentence-info">
+                <text>{{gourmet.dish_price}}</text>
+            </view>
+            <view class="sentence-info">
+                <text>{{gourmet.address}}</text>
+            </view>
+            <view class ='sentence-user'>
+            <text class="b">-- {{gourmet.user_nickname}}</text>
+            </view>
+
+          </view>
+          </view>
+          </view>
+
+      
+      <view class="share-ui-row ui-row" style="">
+        <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;">
+          <view class="ui-col-content align-right valign-middle">
+            <view class="share-content-box">
+              <image src="../../imgs/ic_share.png" />
+              <button open-type="share" hover-class="none" data-id="2"></button>
+            </view>
+          </view>
+        </view>
+
+        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view class="share-content-box" bindtap="getShareSentencTap">
+              <image src="../../imgs/ic_image.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+<text class='wenben1'>{{gourmet.description}}</text>
 
 <view class="view_publisher">
     <image id="publisher_avatar" src="{{gourmet.user_avatar}}"></image>

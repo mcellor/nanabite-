@@ -28,6 +28,10 @@ function setLoading(yes){
 function clearData(){
    gourmet_title = "";
    gourmet_desc = "";
+   gourmet_address = "";
+   //default
+  gourmet_dish = "美式 🍔";
+  gourmet_money = "$10-$15 💵💵";
    urls = [];
    headurl = "";//
    headurlIndex = 0;
@@ -41,7 +45,7 @@ Page({
       ,urls:[]
       ,total_pics_number: MAX_PIC_LENGTH
       , fileds: ['美式 🍔', '面条 🍜', '沙拉 🥗','牛排 🍖']
-      , fIndex: 2
+      , fIndex: 0
       , moneys: ['<$10 💵', '$10-$15 💵💵', '$15-$25 💰', '$25-$40 💰💰','>$40 💰💰💰']
       , mIndex: 1,
       lenurls: 0
@@ -62,14 +66,23 @@ Page({
   }
 
     ,onLoad: function(){
+  
       var that = this;
+      var lenurls = 0;
       //set the width and height
       // 动态设置map的宽和高
       app.getSystemInfo((width, height) => {
         console.log('select_lnglat',width, height);
-        urls.push('/imgs/default_img.png')
+        if(urls.length==0){
+        urls.push('/imgs/default_img.png');
+        }else{
+          lenurls = urls.length;
+          urls = that.urls;
+        }
+
         that.setData({
             urls: urls
+            ,lenurls: lenurls
             ,map_width: width
             ,map_height: width
             //设置预览小图的大小
@@ -82,6 +95,11 @@ Page({
   }
   ,onReady: function() {
     this.chooseLocation()
+  },
+  onUnload:function(){
+    this.setData({
+      urls:[]
+    })
   }
   //add pictures
   ,add_pics:function(){
@@ -90,7 +108,7 @@ Page({
       utils.showModal('错误','最多添加'+MAX_PIC_LENGTH+'张图片')
       return;
     }
-    
+    console.log("here");
     var that = this;
       wx.chooseImage({
         count: MAX_PIC_LENGTH - urls.length, // 最多MAX_PIC_LENGTH张图片
@@ -117,8 +135,8 @@ Page({
                   //
                   headurl = urls.length > 0 ? urls[0] : "";
                   that.setData({
-                    urls: urls,
-                    lenurls: urls.length
+                    urls: urls
+                    ,lenurls:urls.length
                     ,headurl: headurl
                     ,show_headurl: headurl == "" ? false : true
                   })
@@ -197,7 +215,7 @@ Page({
       if(mDoing) return utils.showModal('噢漏','请稍后再试');
       console.log("新增美食点");
       console.log('geopoint',geopoint);
-      console.log('urls',urls);
+      console.log('urls', urls);
       console.log('headurl',headurl);
       console.log('gourmet_title',gourmet_title);
       console.log('gourmet_desc',gourmet_desc);
@@ -210,7 +228,7 @@ Page({
       if(!geopoint){
           return utils.showModal('错误','请选择位置')
       }
-      if(urls.length == 0){
+    if (urls.length == 0){
           return utils.showModal('错误','至少上传一张图片')
       }
       if(gourmet_title.trim() === ""){
@@ -221,9 +239,26 @@ Page({
       }
       //
       setLoading(true);
+
+      //新接口
+      var user_info;
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+              user_info = res.userInfo
+            }
+          })
+        }
+      }
+    })
+    
       //
       app.getUserInfo(userinfo=>{
-        console.log(userinfo)
+        console.log(user_info)
         var Gourmet = Bmob.Object.extend("gourmet");
         var gourmet = new Gourmet();
         gourmet.set("user_nickname", userinfo.nickName);
@@ -250,7 +285,7 @@ Page({
                 console.log("创建成功, objectId:"+result.id);
                 clearData();
                 app.flags.refresh_index = true;
-                wx.navigateBack()
+                wx.navigateBack();
             },
             error: function(result, error) {
               // 添加失败

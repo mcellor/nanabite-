@@ -132,6 +132,9 @@ Page({
     loadFirstPage(this);
   }
   ,onHide: function() {
+    this.setData({
+      isShowUserPannel: false
+    })
     // Do something when page hide.
   }
   ,onUnload: function() {

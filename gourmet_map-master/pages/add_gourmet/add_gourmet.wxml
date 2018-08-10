@@ -20,7 +20,7 @@
 
   <view class="center">
 
-<view class = "body">
+<view  class = "body">
     <swiper class='imgsilder' style="30px" indicator-dots="ture" bindtap="preview" autoplay="true" >
       <block wx:for="{{urls}}" wx:key="*this">
         <swiper-item>
@@ -29,22 +29,22 @@
       </block>
      </swiper>
      </view>
-    <text class='title2'>已添加{{lenurls}}/{{total_pics_number}}张图片</text>
+    <text  class='title2'>已添加{{lenurls}}/{{total_pics_number}}张图片</text>
   </view>
 
+<!--bindtap ='chooseLocation' >
     
     <!-- <textarea placeholder="美食名称：小仙女肉～" style="height:2.5em" bindinput="inputDish" maxlength="500" class="inputext"/> -->
 
 <view class='basic'>
   <text class='basictext'>基本信息</text>
   <!--名字部分  -->
+  <view  bindtap='chooseLocation' >
   <view  class='namebox'>
-    <text  class='name'>地址</text>
+    <text class='name'>地址</text>
     <image class='nameicon' src='/imgs/righticon.png'></image>
-    <view bindchange="chooseLocation">
-          <view  class='field'>{{address}}</view> 
-    </view>
-
+    <input class='field' value="{{address}}"></input> 
+</view>
   </view>
 
   <!--手机号部分  -->
@@ -78,7 +78,9 @@
   </view>
     </view>
 
+<view class = 'div'>
     <textarea placeholder="简单描述一下呗：～" bindinput="inputDesc" maxlength="500" class="inputext" />
+</view>
 
 </view>
 
