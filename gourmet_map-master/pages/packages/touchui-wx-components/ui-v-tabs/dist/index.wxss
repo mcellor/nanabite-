@@ -1,0 +1,23 @@
+/* 1像素解决方案 */
+/*
+ * 清除1px
+ */
+/*
+ * 清除浮动
+ */
+/*
+ * mobile
+ */
+/*
+ * 1px
+ */
+/*
+ * text
+ */
+ui-v-tabs {
+  display: inline-block;
+}
+.ui-v-tabs {
+  position: relative;
+  height: 100%;
+}

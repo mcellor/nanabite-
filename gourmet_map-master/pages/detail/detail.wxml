@@ -1,19 +1,87 @@
+<!-- <import src="../template_detail/indexPopup.wxml" />
+<template is="userPannel" data="{{isShowUserPannel}}" /> -->
+<!-- <view class='add_symbol'wx:if="{{showDialog}}" bindtap="toggleDialogHandle"></view> -->
+<!-- <view class='add_symbol' wx:if="{{showDialog}}" bindtap="toggleDialogHandle"></view> -->
+
 <view class="main">
+  <view class="center">
+    <swiper style="height:{{img_height}}px" indicator-dots="{{indicatorDots}}"bindtap="preview"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{gourmet.urls}}" wx:key="*this">
+        <swiper-item>
+        <image src="{{item}}" mode="aspectFill" class="swiper-image" width="{{img_width}}" height="{{img_height}}"/>
+        </swiper-item>
+       </block>
+     </swiper>
 
-<view class="center">
+   </view>
 
-<swiper style="height:{{img_height}}px" indicator-dots="{{indicatorDots}}"
-  bindtap="preview"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{gourmet.urls}}" wx:key="*this">
-    <swiper-item>
-      <image src="{{item}}" mode="aspectFill" class="swiper-image" width="{{img_width}}" height="{{img_height}}"/>
-    </swiper-item>
-  </block>
-</swiper>
+      <view class="content-topics" style="padding-left: 40px">
+    <view class="topics-title">{{gourmet.dish_name}}</view>
+    <view class = 'topice-user' id="publisher">{{gourmet.title}}        </view>
+        </view>
 
+
+      <view class="ui-row" style="margin-bottom: 50px;margin-top: 10px;height:200px;">
+        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 40px;padding-right: 40px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view class="content-sentence">
+              <view class="sentence-info">
+                <text>{{gourmet.description}}</text>
+              </view>
+              <view class="sentence-info">
+                <text>{{gourmet.dish_price}}</text>
+              </view>
+              <view class="sentence-info">
+                <text>{{gourmet.address}}</text>
+              </view>
+              <!-- <view class="sentence-book">{{gourmet.dish_name}}</view> -->
+              <view  class="sentence-user">
+                <text class="a"></text>
+                <text class="b">{{gourmet.user_nickname}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view bindtap="addSupport" class="btn_operate">
+      <image class="ic_operate" src="{{ic_support}}"></image>
+      顶</view> -->
+
+      <view class="share-ui-row ui-row" style="">
+
+      <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10rpx;">
+          <view class="ui-col-content align-right valign-middle">
+            <view bindtap="addSupport" class="share-content-box">
+              <image src="{{ic_support}}" />
+            </view>
+          </view>
+        </view>
+
+        <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 50rpx;">
+          <view class="ui-col-content align-right valign-middle">
+            <view class="share-content-box">
+              <image src="../../imgs/ic_share.png" />
+              <button open-type="share" hover-class="none" data-id="2"></button>
+            </view>
+          </view>
+        </view>
+
+        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10rpx;">
+          <view class="ui-col-content align-left valign-middle">
+            <view class="share-content-box" bindtap="getShareArticle">
+              <image src="../../imgs/ic_image.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+<view bindtap="openLocation" id="openLocation" class="topice-voice" >
+          <text>查看位置</text>
 </view>
 
+
+<!-- 
 <view class="content-topics" style="padding-left: 40px">
     <view class="topics-title">{{gourmet.dish_name}}</view>
     <view class = 'topice-user' id="publisher">{{gourmet.title}}</view>
@@ -38,61 +106,42 @@
 
           </view>
           </view>
-          </view>
-
-      
-      <view class="share-ui-row ui-row" style="">
-        <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;">
-          <view class="ui-col-content align-right valign-middle">
-            <view class="share-content-box">
-              <image src="../../imgs/ic_share.png" />
-              <button open-type="share" hover-class="none" data-id="2"></button>
-            </view>
-          </view>
-        </view>
-
-        <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view class="share-content-box" bindtap="getShareSentencTap">
-              <image src="../../imgs/ic_image.png" />
-            </view>
-          </view>
-        </view>
-      </view>
+          </view> -->
 
 
-<text class='wenben1'>{{gourmet.description}}</text>
+<!-- <text class='wenben1'>{{gourmet.description}}</text> -->
 
 <view class="view_publisher">
     <image id="publisher_avatar" src="{{gourmet.user_avatar}}"></image>
-    <view id="publisher">{{gourmet.user_nickname}}</view>
-</view>
-
-<view class="gourmet_info">
-  <text id="create_time_tag">发布于{{gourmet.create_time_tag}}</text>
+    <view id="publisher">{{gourmet.user_nickname}}
+  <!-- <text id="create_time_tag">{{gourmet.createdAt}}</text> -->
   <view class="support_info">
     <view class="support_info_support">
-      <image src="/imgs/ic_like.png"></image>
+      <image src="/imgs/ic_heartfull.png"></image>
       <text>{{gourmet.support ? gourmet.support : 0}}</text>
     </view>
-    <view class="support_info_unsupport">
-      <image src="/imgs/ic_unlike.png"></image>
-      <text>{{gourmet.objection ? gourmet.objection : 0}}</text>
-    </view>
-  </view>
+    </view>      
+
+    
+</view>
 </view>
 
-<view class="center">
+
+    <!-- <view class="support_info_unsupport">
+      <image src="/imgs/ic_unlike.png"></image>
+      <text>{{gourmet.objection ? gourmet.objection : 0}}</text>
+    </view> -->
+
+<!-- <view class="center">
       <view bindtap="openLocation" id="openLocation">
         <image id="img_openlocation" src="../../imgs/ic_map.png"></image>
         <text style="vertical-align: middle">查看位置</text>
       </view>
-</view>
+</view> -->
 
 <!--comments-->
-<view class="comment">
-    
-    <view class="view_operate">
+
+    <!-- <view class="view_operate">
       <view bindtap="openComment" class="btn_operate">
       <image class="ic_operate" src="/imgs/ic_write_comment.png"></image>
       写评论</view>
@@ -104,12 +153,14 @@
       <view bindtap="addUnsupport" class="btn_operate">
       <image class="ic_operate" src="{{ic_unsupport}}"></image>
       踩</view>
-    </view>
+    </view> -->
 
+<view class="comment">
+    
     <block wx:if="{{!comments}}">
       <view class="center blank" bindtap="openComment">
         <image id="sofa" src="/imgs/ic_sofa.png"></image>
-        <view style="color: #bfbfbf;">快抢沙发</view>
+        <view style="color: #bfbfbf;"></view>
       </view>
     </block>
 
@@ -118,12 +169,13 @@
       <view style="display:flex;padding: 0px 10px;">
         <view class="layout_left">
           <image class="avatar" src="{{item.avatar}}"></image>
+          <view class="comment_text_nickname">{{item.create_time_tag}}</view>
+
         </view>
 
         <view class="layout_right">
-          <text class="comment_text_nickname">{{item.nickname}}</text>
-          <text class="comment_text_content">{{item.content}}</text>
-          <text class="comment_text_time">{{item.create_time_tag}}</text>
+          <text class="comment_text_content">{{item.nickname}}</text>
+          <text class="comment_text_time">{{item.content}}</text>
         </view>
       </view>
       <view class="line" />
@@ -136,20 +188,47 @@
     
 </view>
 
+
+
+
+<!-- <ui-mask show="{{showMask}}" custom-style="{{ customStyle }}" _pid="{{_pid}}">
+  </ui-mask> -->
+<!-- <view class='add_symbol' wx:if="{{showDialog}}" bindtap="toggleDialogHandle"></view> -->
+
+<view class="add_symbol" wx:if="{{!showDialog}}" bindtap="toggleDialogHandle"></view>
+    <view class="overlay_box" wx:if="{{showDialog}}">
+        <view class="overlay_title">
+            <text>评论</text>
+            <image class="close_btn" src="/imgs/icon_cancel.png" mode="aspectFill" bindtap="toggleDialogHandle"></image>
+        </view>
+        
+        <view class="textarea_box">
+            <textarea bindinput="inputComment"
+     name="commContent" value="{{commContent}}"
+     focus="{{focus}}" placeholder="写下您的评论" />
+        </view>
+
+        <button bindtap="addComment" class="send_btn">发送</button>
+    </view>
+
 <!--<include src="../common/loading.wxml"/>-->
 
-<view hidden="{{!show_comment}}"
+
+
+<!-- <view hidden="{{!show_comment}}"
       class="view_comment">
+
   <view class="comment_layer" catchtouchstart="closeComment"></view>
   <form>
      <input placeholder="请输入评论..." 
      bindinput="inputComment"
      name="commContent" value="{{commContent}}"
      focus="{{focus}}" />
+
      <view class="btn_send_comment"
      bindtap="addComment"
      formType="submit">提交</view>
   </form>
-</view>
+</view> -->
 
 </view>

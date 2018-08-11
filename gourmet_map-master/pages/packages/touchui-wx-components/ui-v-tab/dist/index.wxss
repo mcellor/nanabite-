@@ -1,0 +1,22 @@
+ui-v-tab {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.ui-v-tab {
+  padding: 14px 18px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.ui-v-tab.active .active {
+  position: absolute;
+  width: 40rpx;
+  height: 8rpx;
+  background-color: #333;
+  left: 0;
+}

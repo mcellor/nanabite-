@@ -1,7 +1,7 @@
 {
   "backgroundTextStyle":"light",
-  "navigationBarBackgroundColor": "#000000",
+  "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "详情",
-  "navigationBarTextStyle":"white",
-  "backgroundColor": "#f7f7f7"
+  "navigationBarTextStyle":"black",
+  "backgroundColor": "#fff"
 }
