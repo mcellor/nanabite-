@@ -4,7 +4,9 @@
     "pages/index/index"
     ,"pages/map/map"
     ,"pages/detail/detail"
-                ,"pages/add_gourmet/add_gourmet"
+    ,"pages/add_gourmet/add_gourmet"
+    ,
+    "pages/welcome/welcome"
                 
         
   ]

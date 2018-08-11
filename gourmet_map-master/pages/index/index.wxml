@@ -4,7 +4,7 @@
 
 <view class='headers'>
   <text class='title'>Nanabite</text>
-  <image src="{{avatarUrl}}"></image>
+  <image src="{{userInfo.avatarUrl}}"></image>
 </view>
 <!--特别推荐轮播图  -->
 <view class='body'>

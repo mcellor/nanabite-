@@ -1,5 +1,5 @@
 //获取应用实例
-var app = getApp();
+let app = getApp()
 var API = require('../../api/API.js');
 var utils = require('../../utils/util.js');
 
@@ -44,6 +44,7 @@ function loadFirstPage(that){
 
 Page({
   data: {
+    userInfo: wx.getStorageSync(app.globalData.userInfoKey),
     avatarUrl:""
     ,app_name: '美食地图'
     ,ismore: mIsmore
@@ -108,13 +109,19 @@ Page({
 
   ,onLoad: function(options) {
     // Do some initialize when page load.
-
     API.addLocationPoint()
-    app.getUserInfo(userinfo => {
-      this.setData({
-        avatarUrl: userinfo.avatarUrl
-      })
+    this.setData({
+      userInfo: app.getUserinfo_1()
     })
+    // this.setData({
+    //   userInfo: app.getUserinfo()
+    // })
+    // app.getUserInfo(userinfo => {
+    //   this.setData({
+    //     avatarUrl: userinfo.avatarUrl
+    //   })
+    // }
+    // )
     
 
 
