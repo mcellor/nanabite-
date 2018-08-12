@@ -115,6 +115,13 @@ page{
   font-weight: lighter;
   width: 100%;
 }
+.noComment-text {
+  text-align: center;
+  color: #333;
+  font-size: 30rpx;
+  font-weight: lighter;
+  width: 100%;
+}
 
 .keInfo-box {
   position: fixed;
@@ -440,6 +447,7 @@ page{
 	border-radius: 70rpx;
 	background-color: rgba(255, 217, 46, 1);
 	display: inline-block;
-	float: right;
+	/* float: right; */
 	margin-top: 40rpx;
+  box-shadow:2px 1px 2px #888888;
 }

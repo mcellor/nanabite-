@@ -2,6 +2,7 @@
 <template is="userPannel" data="{{isShowUserPannel}}" /> -->
 <!-- <view class='add_symbol'wx:if="{{showDialog}}" bindtap="toggleDialogHandle"></view> -->
 <!-- <view class='add_symbol' wx:if="{{showDialog}}" bindtap="toggleDialogHandle"></view> -->
+<button bindtap="addComment" class="send_btn">发送</button>
 
 <view class="main">
   <view class="center">
@@ -69,7 +70,7 @@
 
         <view class="ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10rpx;">
           <view class="ui-col-content align-left valign-middle">
-            <view class="share-content-box" bindtap="getShareArticle">
+            <view class="share-content-box" bindtap="getShareSentencTap">
               <image src="../../imgs/ic_image.png" />
             </view>
           </view>
@@ -158,8 +159,11 @@
 <view class="comment">
     
     <block wx:if="{{!comments}}">
-      <view class="center blank" bindtap="openComment">
+      <view class="center blank" wx:if="{{!showDialog}}" bindtap="toggleDialogHandle" style="padding-top:20px;">
+        
         <image id="sofa" src="/imgs/ic_sofa.png"></image>
+        <view class="noComment-text" >
+          <text>还没有其他评论哦</text></view>
         <view style="color: #bfbfbf;"></view>
       </view>
     </block>
@@ -199,6 +203,8 @@
     <view class="overlay_box" wx:if="{{showDialog}}">
         <view class="overlay_title">
             <text>评论</text>
+                    <button bindtouchend="addComment" class="send_btn">发送</button>
+
             <image class="close_btn" src="/imgs/icon_cancel.png" mode="aspectFill" bindtap="toggleDialogHandle"></image>
         </view>
         

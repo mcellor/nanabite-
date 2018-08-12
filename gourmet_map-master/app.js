@@ -13,7 +13,6 @@ let app = {
     userInfo: wx.getStorageSync(USERINFOKEY), //用户信息
   },
   onLaunch: function () {
-    console.log("eee",!!wx.getStorageSync(USERINFOKEY))
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -46,7 +45,6 @@ let app = {
     }
   },
   getUserinfo_1: function () {
-    console.log("EEE");
     return wx.getStorageSync(USERINFOKEY)
   },
   

@@ -6,8 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    hasUserInfos: !!wx.getStorageSync("userinfo")
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    // hasUserInfos: !!wx.getStorageSync("userinfo")
+    isShowDetail: false
   },
 
   /**
@@ -39,7 +40,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      isShowDetail: false
+    })
   },
 
   /**
@@ -69,8 +72,22 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   bindGetUserInfo: function (e) {
     console.log(e.detail.userInfo);
     app.setUserinfo(e)
+  },
+
+  user_aggre: function () {
+    let isShow = this.data.isShowDetail
+    if (!isShow) {
+      isShow = true
+    } else {
+      isShow = false
+    }
+    this.setData({
+      isShowDetail: isShow
+    })
   }
+
 })

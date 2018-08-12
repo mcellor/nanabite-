@@ -1,4 +1,4 @@
-/* pages/auth/auth.wxss */
+/* pages/auth/auth.wxss
 .userinfo_auth {
   width: 100vw;
   height: 100vh;
@@ -14,4 +14,50 @@
   top: 50%;
   margin-top: -40rpx;
   line-height:80rpx;
+} */
+.content-topics{
+  padding-top:5%;  
+  text-align: center;
+
+}
+
+.content-topics .topice-user {
+  font-size: 28rpx;
+  margin: 0 auto;
+  color: #999;
+  font-weight: lighter;
+  padding-top: 1rpx;
+}
+.content-topics .topics-title {
+  margin: 0 auto;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: lighter;
+  padding-top: 30rpx;
+}
+#publisher{
+    font-size: 0.8em;
+    color: gray;
+    vertical-align: middle;
+}
+.send_btn{
+  align-items: center;
+  font-size:0.8em;
+	padding:10rpx 100rpx;
+	border-radius: 70rpx;
+	background-color: white;
+	display: inline-block;
+	/* float: left; */
+	margin-top: 20rpx;
+  box-shadow:2px 1px 1px #888888;
+}
+.wrapper{
+  	display: flex;
+}
+
+.useragg {
+  text-align:center;
+  font-size: 0.5em;
+  color: #333;
+  font-weight: lighter;
 }

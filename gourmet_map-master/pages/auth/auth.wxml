@@ -1,4 +1,31 @@
 <!--pages/auth/auth.wxml-->
-<view wx:if="{{!hasUserInfo}}" class='userinfo_auth'>
-  <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<import src="../user_aggrement/user_aggrement.wxml" />
+<template is="user_aggr" data="{{isShowDetail}}" />
+
+<view style ="flex">
+<view class="content-topics" >
+<image mode="widthFix" src="../../imgs/n-1.png"  width="250px" height="300px"  />
+
+    <view class="topics-title">Nanabite 美食地图</view>
+        <view class = 'topice-user' id="publisher">v 0.2.1</view>
+
+    <view class = 'topice-user' id="publisher">Proudly Present by </view>
+
+     <view class = 'topice-user' id="publisher">Nanabite LLC, Rochester,NY
+</view>
+
+    </view>
+       
+<view class = 'useragg' style='padding-top: 40rpx;' >By Clicking this Button Means You Approve
+</view>
+<view class = 'useragg' >General User Aggrement
+</view>
+
+
+
+<view class="wrapper">
+ 
+  <button  class="send_btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+
+</view> 
 </view>

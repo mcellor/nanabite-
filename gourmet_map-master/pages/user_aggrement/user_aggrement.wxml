@@ -1,0 +1,48 @@
+<!--pages/user_aggrement/user_aggrement.wxml-->
+<template name="user_aggr">
+  <view wx:if="{{isShowDetail}}" class='user'>
+
+    <image bindtap = 'user_aggre' class='bg' src="/imgs/bg.png"></image>
+
+<!-- <text>1.  Introduction
+
+“You” and “your” refer to any user who uses, browses, or otherwise accesses services (collectively, the “Service") provided by NANABITE LLC. and its parents, subsidiaries, representatives, affiliates, officers and directors . “We”, “us”, and “our” refer to NANABITE LLC.
+
+These Terms and Conditions (“Terms”) govern your access or use of the websites and mobile applications made available in the United States by the Service. By using, accessing, or visiting the websites or mobile applications provided by the Service, you signify your agreement to be bound by these Terms.
+
+2. Translation
+These terms are originally written in English but we may translate these terms to other languages for your convenience. In the case that there is any conflict between any translated version with the English version, the English version controls.
+
+3. Service
+You may not use the Service if you are under 18 or lack the legal power or authority to enter into these Terms.
+We may modify, interrupt, discontinue, or suspend the Service at any time without notice or liability.
+
+In these Terms, “Your Content” shall mean any audio, video text, images or other material you choose to display on this Website. By displaying Your Content, you grant us a non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.
+
+We may require you to create an “account” in order to access certain portions of our Service and in order to submit content. Your account password is confidential and you are responsible for maintaining the confidentiality of your account password. You are solely responsible for all activity that occurs on your account. You agree to notify us immediately of any unauthorized or unlawful use of your account.
+
+4. Usage Rights
+We reserve the right to revoke, remove, or discontinue any account for any reason at any time without notice or liability.
+
+Your Content must be your own and must not be invading any third-party’s rights. We reserve the right to remove any of Your Content from this Website at any time without notice.
+
+5. LIMITATION OF LIABILITY
+THIS SERVICE IS PROVIDED “AS IS,” WITH ALL FAULTS, AND TO THE FULLEST EXTENT OF THE LAW WE EXPRESS NO REPRESENTATIONS OR WARRANTIES, OF ANY KIND RELATED TO THIS SERVICE OR THE MATERIALS CONTAINED ON OUR SERVICES.
+
+YOU HEREBY INDEMNIFY TO THE FULLEST EXTENT NANABITE LLC FROM AND AGAINST ANY AND/OR ALL LIABILITIES, COSTS, DEMANDS, CAUSES OF ACTION, DAMAGES AND EXPENSES ARISING IN ANY WAY RELATED TO YOUR BREACH OF ANY OF THE PROVISIONS OF THESE TERMS.
+
+IN NO EVENT SHALL NANABITE LLC, NOR ANY OF ITS OFFICERS, DIRECTORS AND EMPLOYEES, SHALL BE HELD LIABLE FOR ANYTHING ARISING OUT OF OR IN ANY WAY CONNECTED WITH YOUR USE OF THIS WEBSITE WHETHER SUCH LIABILITY IS UNDER CONTRACT.  NANABITE LLC, INCLUDING ITS OFFICERS, DIRECTORS AND EMPLOYEES SHALL NOT BE HELD LIABLE FOR ANY INDIRECT, CONSEQUENTIAL OR SPECIAL LIABILITY ARISING OUT OF OR IN ANY WAY RELATED TO YOUR USE OF THIS WEBSITE.
+6. Severability
+If any provision of these Terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.
+7. Variation of Terms
+nanabite is permitted to revise these Terms at any time as it sees fit, and by using this Website you are expected to review these Terms on a regular basis.
+8. Assignment
+The nanabite is allowed to assign, transfer, and subcontract its rights and/or obligations under these Terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of your rights and/or obligations under these Terms.
+9. Entire Agreement
+These Terms constitute the entire agreement between nanabite and you in relation to your use of this Website, and supersede all prior agreements and understandings.
+10. Governing Law & Jurisdiction
+These Terms will be governed by and interpreted in accordance with the laws of the State of New York, and you submit to the non-exclusive jurisdiction of the state and federal courts located in New York for the resolution of any disputes.
+</text> -->
+</view>
+
+</template>

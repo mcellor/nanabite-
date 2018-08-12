@@ -172,6 +172,7 @@ Page({
   }
 
   ,addComment: function(e){
+    console.log("yeh")
       var that = this;
       var content = this.data.commContent;
       console.log(content);
@@ -180,7 +181,7 @@ Page({
       }
       app.getUserInfo(userinfo=>{
         //
-        utils.showLoading("loading")
+        // utils.showLoading("loading")
         addComment(gourmet.objectId, userinfo, content, (ok,newComment)=>{
           if(ok){
             that.setData({
@@ -190,9 +191,10 @@ Page({
               ,focus: false,
               showDialog:false
             });
+            // toggleDialogHandle();
             loadFirstPage(that);
           }
-          utils.hideLoading();
+          // utils.hideLoading();
         });
       })
   }
@@ -277,139 +279,179 @@ Page({
   //打开评论弹出层
   toggleDialogHandle: function () {
     this.showDialog = !this.showDialog;
+    var that = this;
+    
     this.setData({
       showDialog: this.showDialog
     })
-  },
+  }
 
 
-  getShareArticle: function getShareArticle() {
+  // ,getShareArticle: function getShareArticle() {
+  //   var that = this;
+
+  //   console.log(that.data.gourmet.address);
+
+
+  //   wx.showLoading({ title: '\u751F\u6210\u56FE\u7247\u4E2D', mask: true });
+  //   var ctx = wx.createCanvasContext('shareCanvas');
+  //   //var img = that.data.gourmet.head_url;
+  //   //var tmg = img.replace(/http:/g, 'http:');
+  //   var tit = that.data.gourmet.address;
+  //   var tsp = tit.split('');
+  //   if (tsp.length > 18) {
+  //     var tit = tit.slice(0, 18) + '...';
+  //   }
+  //   var use = that.data.gourmet.address;
+  //   var acr = that.data.gourmet.address;
+  //   var acp = acr.replace(/\n\n/g, '');
+  //   var acs = acp.split('');
+  //   var acm = '';
+  //   var row = [];
+  //   for (var a = 0; a < acs.length; a++) {
+  //     if (ctx.measureText(acm).width < 320) {
+  //       acm += acs[a];
+  //     } else {
+  //       a--;
+  //       row.push(acm);
+  //       acm = '';
+  //     }
+  //   }
+  //   row.push(acm);
+
+  //   wx.getImageInfo({
+  //     src:"";
+  //     success: function success(res) {
+  //       ctx.setFillStyle('#ffffff');
+  //       ctx.fillRect(0, 0, 400, 800);
+  //       ctx.drawImage('../../imgs/logo_share.png', 20, 30, 80, 80);
+  //       // ctx.setFillStyle('#333333');
+  //       // ctx.setFontSize(18);
+  //       // ctx.fillText('小独', 108, 63);
+  //       // ctx.setFillStyle('#999999');
+  //       // ctx.setFontSize(14);
+  //       // ctx.fillText('溺于安宁，独伴时光', 108, 92);
+  //       // ctx.strokeStyle = "#eee";
+  //       // ctx.lineWidth = 0.5;
+  //       // ctx.beginPath();
+  //       // ctx.moveTo(20, 130);
+  //       // ctx.lineTo(380, 130);
+  //       // ctx.stroke();
+  //       // ctx.drawImage(res.path, 20, 145, 360, 180);
+  //       // ctx.setFillStyle('#333333');
+  //       // ctx.setFontSize(18);
+  //       // ctx.fillText(tit, 20, 355);
+  //       // ctx.setFillStyle('#999999');
+  //       // ctx.setFontSize(13);
+  //       // ctx.fillText(use, 20, 380);
+  //       // ctx.setFillStyle('#666666');
+  //       // ctx.setFontSize(15);
+  //       // if (row.length > 4) {
+  //       //   var rowCut = row.slice(0, 4);
+  //       //   var rowPart = rowCut[1];
+  //       //   var test = '';
+  //       //   var empty = [];
+  //       //   for (var a = 0; a < rowPart.length; a++) {
+  //       //     if (ctx.measureText(test).width < 300) {
+  //       //       test += rowPart[a];
+  //       //     } else {
+  //       //       break;
+  //       //     }
+  //       //   }
+  //       //   empty.push(test);
+  //       //   var group = empty[0] + ".......";
+  //       //   rowCut.splice(4, 1, group);
+  //       //   row = rowCut;
+  //       // }
+  //       // for (var b = 0; b < row.length; b++) {
+  //       //   ctx.fillText(row[b], 20, 410 + b * 30, 360);
+  //       // }
+  //       ctx.strokeStyle = "#eee";
+  //       ctx.lineWidth = 0.5;
+  //       ctx.beginPath();
+  //       ctx.moveTo(20, 550);
+  //       ctx.lineTo(380, 550);
+  //       ctx.stroke();
+  //       ctx.drawImage('../../imgs/logo_qrcode.png', 240, 565, 120, 120);
+  //       // ctx.setFillStyle('#333333');
+  //       // ctx.setFontSize(40);
+  //       // ctx.fillText(dat, 50, 636);
+  //       // ctx.setFontSize(22);
+  //       // ctx.fillText(mon + '.' + yer, 96, 636);
+  //       ctx.save();
+  //       ctx.draw();
+  //       console.log(ctx);
+  //       setTimeout(function () {
+
+  //         wx.canvasToTempFilePath({
+  //           x: 0,
+  //           y: 0,
+  //           width: 400,
+  //           height: 700,
+  //           canvasId: 'shareCanvas',
+  //           success: function success(res) {
+  //             console.log("hi");
+  //             wx.hideLoading();
+  //             wx.previewImage({
+  //               urls: [res.tempFilePath]
+  //             });
+  //             setTimeout(function () {
+  //               wx.saveImageToPhotosAlbum({
+  //                 filePath: res.tempFilePath,
+  //                 success: function success(res) {
+  //                   wx.showToast({
+  //                     title: '\u4FDD\u5B58\u6210\u529F',
+  //                     icon: 'none',
+  //                     duration: 2000
+  //                   });
+  //                 }
+  //               });
+  //             }, 200);
+  //           }
+  //         });
+  //       }, 500);
+  //     }
+  //   });
+  // }
+
+  ,getShareSentencTap: function getShareSentencTap() {
     var that = this;
     wx.showLoading({ title: '\u751F\u6210\u56FE\u7247\u4E2D', mask: true });
     var ctx = wx.createCanvasContext('shareCanvas');
-    //var dat = that.data.date;
-    //var mon = that.data.month;
-    //var yer = that.data.year;
-    var img = that.data.gourmet.head_url;
-    var tmg = img.replace(/http:/g, 'http:');
-    var tit = that.data.gourmet.dish_name;
-    var tsp = tit.split('');
-    if (tsp.length > 18) {
-      var tit = tit.slice(0, 18) + '...';
-    }
-    var use = that.data.gourmet.title;
-    var acr = that.data.gourmet.description;
-    var acp = acr.replace(/\n\n/g, '');
-    var acs = acp.split('');
-    var acm = '';
-    var row = [];
-    for (var a = 0; a < acs.length; a++) {
-      if (ctx.measureText(acm).width < 320) {
-        acm += acs[a];
-      } else {
-        a--;
-        row.push(acm);
-        acm = '';
-      }
-    }
-    row.push(acm);
-
-    wx.getImageInfo({
-      src: tmg,
-      success: function success(res) {
-        ctx.setFillStyle('#ffffff');
-        ctx.fillRect(0, 0, 400, 800);
-        ctx.drawImage('../../imgs/logo_share.png', 20, 30, 80, 80);
-        ctx.setFillStyle('#333333');
-        ctx.setFontSize(18);
-        ctx.fillText('Nanabite', 108, 63);
-        ctx.setFillStyle('#999999');
-        ctx.setFontSize(14);
-        ctx.fillText('美食地图', 108, 92);
-        ctx.strokeStyle = "#eee";
-        ctx.lineWidth = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(20, 130);
-        ctx.lineTo(380, 130);
-        ctx.stroke();
-        ctx.drawImage(res.path, 20, 145, 360, 180);
-        ctx.setFillStyle('#333333');
-        ctx.setFontSize(18);
-        ctx.fillText(tit, 20, 355);
-        ctx.setFillStyle('#999999');
-        ctx.setFontSize(13);
-        ctx.fillText(use, 20, 380);
-        ctx.setFillStyle('#666666');
-        ctx.setFontSize(15);
-        if (row.length > 4) {
-          var rowCut = row.slice(0, 4);
-          var rowPart = rowCut[1];
-          var test = '';
-          var empty = [];
-          for (var a = 0; a < rowPart.length; a++) {
-            if (ctx.measureText(test).width < 300) {
-              test += rowPart[a];
-            } else {
-              break;
-            }
-          }
-          empty.push(test);
-          var group = empty[0] + ".......";
-          rowCut.splice(4, 1, group);
-          row = rowCut;
-        }
-        for (var b = 0; b < row.length; b++) {
-          ctx.fillText(row[b], 20, 410 + b * 30, 360);
-        }
-        ctx.strokeStyle = "#eee";
-        ctx.lineWidth = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(20, 550);
-        ctx.lineTo(380, 550);
-        ctx.stroke();
-        ctx.drawImage('../../imgs/logo_qrcode.jpg', 240, 565, 120, 120);
-        ctx.setFillStyle('#333333');
-        ctx.setFontSize(40);
-        ctx.fillText('1', 50, 636);
-        ctx.setFontSize(22);
-        ctx.fillText('12' + '.' + '12', 96, 636);
-        ctx.save();
-        ctx.draw();
-        console.log(ctx);
-
-
-        setTimeout(function () {
-          console.log("hi");
-          wx.canvasToTempFilePath({
-            x: 0,
-            y: 0,
-            width: 1,
-            height: 1,
-            canvasId: 'shareCanvas',
-            success: function success(res) {
-              console.log(res.tempFilePath)
-
-              wx.hideLoading();
-              wx.previewImage({
-                urls: [res.tempFilePath]
-              });
-              setTimeout(function () {
-                wx.saveImageToPhotosAlbum({
-                  filePath: res.tempFilePath,
-                  success: function success(res) {
-                    wx.showToast({
-                      title: '\u4FDD\u5B58\u6210\u529F',
-                      icon: 'none',
-                      duration: 1000
-                    });
-                  }
-                });
-              }, 200);
-            }
+    ctx.setFillStyle('#ffffff');
+    ctx.fillRect(0, 0, 400, 580);
+   // ctx.drawImage('../../imgs/logo_share.png', 20, 30, 80, 80);
+    ctx.stroke();
+    //ctx.drawImage('../../imgs/logo_qrcode.png', 240, 435, 120, 120);
+    ctx.save();
+    ctx.draw();
+    setTimeout(function () {
+      wx.canvasToTempFilePath({
+        x: 0,
+        y: 0,
+        width: 400,
+        height: 580,
+        canvasId: 'shareCanvas',
+        success: function success(res) {
+          wx.hideLoading();
+          wx.previewImage({
+            urls: [res.tempFilePath]
           });
-        }, 500);
-      }
-    });
+          setTimeout(function () {
+            wx.saveImageToPhotosAlbum({
+              filePath: res.tempFilePath,
+              success: function success(res) {
+                wx.showToast({
+                  title: 'a',
+                  icon: 'none',
+                  duration: 2000
+                });
+              }
+            });
+          }, 200);
+        }
+      });
+    }, 500);
   }
 
 
