@@ -29,6 +29,7 @@
       </block>
      </swiper>
      </view>
+         <text  class='title2'>单击预览效果</text>
     <text  class='title2'>已添加{{lenurls}}/{{total_pics_number}}张图片</text>
   </view>
 
@@ -85,3 +86,7 @@
 </view>
 
   <button bindtap="add_gourmet" class='back' open-type="navigateBack">发送</button>
+
+<view class="noting">
+  
+</view>

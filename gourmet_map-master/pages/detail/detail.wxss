@@ -410,7 +410,7 @@ page{
 	box-sizing: border-box;
 	z-index: 3;
 	padding:30rpx 40rpx;
-	height: 500rpx;
+	height: 700rpx;
 	background-color: #F5F5F5;
 	bottom: 0;
 }
@@ -432,7 +432,8 @@ page{
 .textarea_box{
   padding:23rpx 29rpx;
   background-color: white;
-	height: 213rpx;
+	/* height: 213rpx; */
+  z-index:100;
 	border-radius: 10rpx;
 	border:1rpx solid rgb(206,206,206);
 	margin-top: 30rpx;
@@ -447,7 +448,7 @@ page{
 	border-radius: 70rpx;
 	background-color: rgba(255, 217, 46, 1);
 	display: inline-block;
-	/* float: right; */
+	float: right;
 	margin-top: 40rpx;
   box-shadow:2px 1px 2px #888888;
 }

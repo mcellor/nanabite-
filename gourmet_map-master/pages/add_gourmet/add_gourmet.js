@@ -40,6 +40,7 @@ function clearData(){
 
 Page({
     data:{
+      
       map_width: 380
       ,map_height: 380
       ,urls:[]
